@@ -6,7 +6,7 @@
 /*   By: lmariott <lmariott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 00:21:07 by lmariott          #+#    #+#             */
-/*   Updated: 2020/09/05 02:38:11 by lmariott         ###   ########.fr       */
+/*   Updated: 2020/09/07 12:57:41 by lmariott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int		troute_help(void)
 {
-	ft_putendl("Usage: ft_troute [-vhIT] destination");
-	ft_putendl("Usage: ft_troute -6 [-vhIT] destination");
+	ft_putendl("Usage: ft_traceroute [-h] destination");
+	ft_putendl("Usage: ft_traceroute -6 [-h] destination");
 	return (0);
 }
 
@@ -23,12 +23,6 @@ static int		whicharg(char **args, int i)
 {
 	if (args[i][1] == '6')
 		return ((g_troute->opt.ip6 = 1));
-	else if (args[i][1] == 'v')
-		return ((g_troute->opt.v = 1));
-	else if (args[i][1] == 'I')
-		return ((g_troute->opt.I = 1));
-	else if (args[i][1] == 'T')
-		return ((g_troute->opt.T = 1));
 	else if (args[i][1] == 'h')
 		return (troute_help());
 	else
